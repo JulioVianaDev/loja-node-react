@@ -1,0 +1,14 @@
+{
+  "name": "loja-node",
+  "version": "1.0.0",
+  "description": "aulas do gabriel e do thiago",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "tomate",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
