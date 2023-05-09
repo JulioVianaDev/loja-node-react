@@ -51,6 +51,11 @@ module.exports = class AuthRegisterUserController{
       image,
       password: passwordHash
     })
-    
+    try {
+      await user.save()
+      res.status(201).json({message: "Usuário cadastrado com sucesso",user})
+    } catch (error) {
+      res.status(500).json({message: "Ocorreu um erro ao cadastrar o usuário, tente novamente mais tarde"})
+    }
   }
 }
