@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom"
+import Registrar from "./pages/Registrar"
 export const router = createBrowserRouter([
     {
       path: '/',
@@ -10,6 +11,6 @@ export const router = createBrowserRouter([
     },
     {
         path:'/register',
-        element: <h1>Registrar</h1>
+        element: <Registrar/>
     }
 ])
