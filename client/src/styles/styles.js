@@ -58,3 +58,9 @@ export const Formulario = styled.form`
   justify-content: space-around;
   height: 400px;  
 `;
+
+export const InputRegistrar = styled.input`
+  width: 256px;
+  height: 50px;
+  border-radius: 12px;
+`;

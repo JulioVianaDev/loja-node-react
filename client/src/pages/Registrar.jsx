@@ -3,7 +3,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import "./Register.css"
 import Popup from '../components/Popup'
-import { Formulario } from '../styles/styles'
+import { Formulario,InputRegistrar } from '../styles/styles'
 function Registrar() {
   const [user,setUser] = useState({
                                     name: '',
@@ -33,7 +33,7 @@ function Registrar() {
       <Formulario className='form' onSubmit={envioFormulario}>
         <div>
           <label className='label' htmlFor="nome">Nome:</label>
-          <input
+          <InputRegistrar
             className='input' 
             type="text" 
             id="nome" 
@@ -43,7 +43,7 @@ function Registrar() {
         </div>
         <div>
           <label className='label' htmlFor="email">Email:</label>
-          <input
+          <InputRegistrar
             className='input' 
             type="text" 
             id="email" 
@@ -53,7 +53,7 @@ function Registrar() {
         </div>
         <div>
           <label className='label' htmlFor="idade">Idade:</label>
-          <input
+          <InputRegistrar
             className='input' 
             type="number" 
             id="idade" 
@@ -63,7 +63,7 @@ function Registrar() {
         </div>
         <div>
           <label className='label' htmlFor="senha">Senha:</label>
-          <input
+          <InputRegistrar
             className='input' 
             type="password" 
             id="senha" 
@@ -72,7 +72,7 @@ function Registrar() {
           />
         </div>
           <label className='label' htmlFor="confirmPassword">Confirme Sua Senha:</label>
-          <input
+          <InputRegistrar
             className='input' 
             type="password" 
             id="confirmPassword" 
