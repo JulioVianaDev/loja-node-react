@@ -12,15 +12,21 @@ function Registrar() {
                                     password: '',
                                     confirmPassword:''
                                   })
+  const [showCard,setShowCard]=useState(false);
+
   function cadastrarUsuario(user){
     axios.post('http://localhost:4000/auth/register/user',user)
       .then(res=>console.log(res.data))
       .catch(erro=> console.log(erro))
   }
-
+  
   function envioFormulario(event){
     event.preventDefault();
     cadastrarUsuario(user)
+    setShowCard(true);
+    setTimeout(()=>{
+      setShowCard(false);
+    },3500)
   }
   return (
     <div className='divForm'>
@@ -76,7 +82,9 @@ function Registrar() {
         
         <button type='submit'>Cadastrar</button>
       </Formulario>
-      <Popup/>
+      {
+        showCard ?<Popup/> : null
+      }
     </div>
   )
 }
