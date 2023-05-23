@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 import "./Register.css"
+import Popup from '../components/Popup'
 import { Formulario } from '../styles/styles'
 function Registrar() {
   const [user,setUser] = useState({
@@ -75,6 +76,7 @@ function Registrar() {
         
         <button type='submit'>Cadastrar</button>
       </Formulario>
+      <Popup/>
     </div>
   )
 }
