@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 import "./Register.css"
+import { Formulario } from '../styles/styles'
 function Registrar() {
   const [user,setUser] = useState({
                                     name: '',
@@ -16,9 +17,13 @@ function Registrar() {
       .catch(erro=> console.log(erro))
   }
 
+  function envioFormulario(event){
+    event.preventDefault();
+    cadastrarUsuario(user)
+  }
   return (
     <div className='divForm'>
-      <form className='form' onSubmit={()=>cadastrarUsuario(user)}>
+      <Formulario className='form' onSubmit={envioFormulario}>
         <div>
           <label className='label' htmlFor="nome">Nome:</label>
           <input
@@ -69,7 +74,7 @@ function Registrar() {
           />
         
         <button type='submit'>Cadastrar</button>
-      </form>
+      </Formulario>
     </div>
   )
 }

@@ -50,3 +50,11 @@ export const DivTasks = styled.div`
   align-items:center;
   justify-content: space-around;
 `;
+
+export const Formulario = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 400px;  
+`;
