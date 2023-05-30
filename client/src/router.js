@@ -8,11 +8,11 @@ export const router = createBrowserRouter([
       element: <Root/>,
       children:[
         {
-          path: '/cadastro',
+          path: 'cadastro',
           element: <h1>Sou a rota de cadastro</h1>
         },
         {
-            path:'/register',
+            path:'register',
             element: <Registrar/>
         }
       ]
