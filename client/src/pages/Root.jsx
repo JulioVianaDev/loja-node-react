@@ -27,8 +27,9 @@ function Root() {
             </div>
         </nav>
 
-
-        <Outlet/>
+        <div className='conteudo'>
+            <Outlet/>
+        </div>
     </div>
   )
 }
