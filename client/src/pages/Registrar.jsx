@@ -80,7 +80,7 @@ function Registrar() {
             onChange={(e)=>setUser({...user,confirmPassword: e.target.value})}
           />
         
-        <button type='submit'>Cadastrar</button>
+        <button className="button-form-register" type='submit'>Cadastrar</button>
       </Formulario>
       {
         showCard ?<Popup/> : null

@@ -16,3 +16,12 @@
 .success{
     border: 2px solid green ;
 }
+.button-form-register{
+    width:256px;
+    height:80px;
+    border-radius: 18px;
+    margin-top: 10px;
+    font-size: 1.4rem;
+    background-color: rgb(19, 3, 189);
+    color: white;
+}
