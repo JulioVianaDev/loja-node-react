@@ -13,6 +13,30 @@ module.exports= class ProductsController{
     static async createProduct(req,res){
         try {
             const { nome,price,desc,disponivel} = req.body;
+            if(!nome){
+               return res.status(406).json({message: "O nome é obrigatório."})
+            }
+            if(!price){
+               return res.status(406).json({message: "O price é obrigatório."})
+            }
+            if(!desc){
+               return res.status(406).json({message: "O desc é obrigatório."})
+            }
+            if(!disponivel){
+               return res.status(406).json({message: "O disponivel é obrigatório."})
+            }
+            if(disponivel !== Boolean){
+               return res.status(406).json({message: "O disponivel tem que ser booleano."})
+            }
+            if(price !== Number){
+               return res.status(406).json({message: "O price tem que ser booleano."})
+            }
+            if(desc !== String){
+               return res.status(406).json({message: "O desc tem que ser booleano."})
+            }
+            if(nome !== String){
+               return res.status(406).json({message: "O nome tem que ser booleano."})
+            }
             const produto = new Product({nome,price,desc,disponivel})
             await produto.save()
             res.status(201).json(produto)
