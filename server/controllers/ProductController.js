@@ -29,13 +29,13 @@ module.exports= class ProductsController{
                return res.status(406).json({message: "O disponivel tem que ser booleano."})
             }
             if(price !== Number){
-               return res.status(406).json({message: "O price tem que ser booleano."})
+               return res.status(406).json({message: "O price tem que ser numero."})
             }
             if(desc !== String){
-               return res.status(406).json({message: "O desc tem que ser booleano."})
+               return res.status(406).json({message: "O desc tem que ser um texto."})
             }
             if(nome !== String){
-               return res.status(406).json({message: "O nome tem que ser booleano."})
+               return res.status(406).json({message: "O nome tem que ser um texto."})
             }
             const produto = new Product({nome,price,desc,disponivel})
             await produto.save()
