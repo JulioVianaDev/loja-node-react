@@ -11,7 +11,7 @@ app.use(express.json())
 const AuthRegisterUserRoutes = require('./routes/AuthRegisterUserRoutes')
 const ProductsRouter = require('./routes/ProductsRoutes')
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 4000
 
 app.use(AuthRegisterUserRoutes)
 app.use('/products',ProductsRouter)
