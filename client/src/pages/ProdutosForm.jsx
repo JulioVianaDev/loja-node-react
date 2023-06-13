@@ -3,7 +3,9 @@ import axios from 'axios';
 
 function ProdutosForm() {
     const [disponivel,setDisponivel] = useState(false);
-
+    const [nome,setNome]= useState('');
+    const [price,setPrice]= useState('');
+    const [desc,setDesc]= useState('');
     const handleCheckboxChange = (event)=>{
         setDisponivel(event.target.checked);
     }
@@ -14,7 +16,7 @@ function ProdutosForm() {
     }
 
     function cadastrarProduto(){
-        axios.post('http://localhost:4000/products',{disponivel})
+        axios.post('http://localhost:4000/products',{disponivel,nome,desc,price})
             .then(res=>console.log(res.data))
             .catch(erro=>console.log(erro))
     }
@@ -22,13 +24,28 @@ function ProdutosForm() {
         <div>
             <h1>Cadastre seu produto</h1>
             <div>
-                <form>
+                <form onSubmit={envioFormulario}>
                     <label htmlFor="nome">Nome</label>
-                    <input type="text" id="nome" name="nome" />
+                    <input 
+                        type="text" 
+                        id="nome" 
+                        name="nome" 
+                        onChange={(e)=>setNome(e.target.value)}
+                    />
                     <label htmlFor="desc">desc</label>
-                    <input type="text" id="desc" name="desc" />
+                    <input 
+                        type="text" 
+                        id="desc" 
+                        name="desc" 
+                        onChange={(e)=>setDesc(e.target.value)}
+                    />
                     <label htmlFor="price">price</label>
-                    <input type="number" id="price" name="price" />
+                    <input 
+                        type="number" 
+                        id="price" 
+                        name="price" 
+                        onChange={(e)=>setPrice(e.target.value)}
+                    />
                     <label htmlFor="disponivel"> Produto Disponivel:</label>
                     <input 
                         type="checkbox" 
@@ -45,6 +62,7 @@ function ProdutosForm() {
                         checked={!disponivel}
                         onChange={handleCheckboxChange}
                     />
+                    <button type="submit">Cadastrar Produto</button>
                 </form>
             </div>
         </div>
