@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import axios from 'axios';
 
 function ProdutosForm() {
     const [disponivel,setDisponivel] = useState(false);
@@ -7,6 +8,16 @@ function ProdutosForm() {
         setDisponivel(event.target.checked);
     }
 
+    const envioFormulario = (event)=>{
+        event.preventDefault();
+        cadastrarProduto();
+    }
+
+    function cadastrarProduto(){
+        axios.post('http://localhost:4000/products',{disponivel})
+            .then(res=>console.log(res.data))
+            .catch(erro=>console.log(erro))
+    }
     return (
         <div>
             <h1>Cadastre seu produto</h1>
