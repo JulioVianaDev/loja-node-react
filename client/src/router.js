@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom"
 import Registrar from "./pages/Registrar"
 import Root from "./pages/Root"
-
+import ProdutosForm from "./pages/ProdutosForm"
 export const router = createBrowserRouter([
     {
       path: '/',
@@ -9,7 +9,7 @@ export const router = createBrowserRouter([
       children:[
         {
           path: 'cadastro',
-          element: <h1>Sou a rota de cadastro</h1>
+          element: <ProdutosForm/>
         },
         {
             path:'register',
