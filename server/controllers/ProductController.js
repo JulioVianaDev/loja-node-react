@@ -25,18 +25,18 @@ module.exports= class ProductsController{
             if(!disponivel){
                return res.status(406).json({message: "O disponivel é obrigatório."})
             }
-            if(disponivel !== Boolean){
-               return res.status(406).json({message: "O disponivel tem que ser booleano."})
-            }
-            if(price !== Number){
-               return res.status(406).json({message: "O price tem que ser numero."})
-            }
-            if(desc !== String){
-               return res.status(406).json({message: "O desc tem que ser um texto."})
-            }
-            if(nome !== String){
-               return res.status(406).json({message: "O nome tem que ser um texto."})
-            }
+            // if(typeof(disponivel) !== Boolean){
+            //    return res.status(406).json({message: "O disponivel tem que ser booleano."})
+            // }
+            // if(price !== Number){
+            //    return res.status(406).json({message: "O price tem que ser numero."})
+            // }
+            // if(desc !== String){
+            //    return res.status(406).json({message: "O desc tem que ser um texto."})
+            // }
+            // if(nome !== String){
+            //    return res.status(406).json({message: "O nome tem que ser um texto."})
+            // }
             const produto = new Product({nome,price,desc,disponivel})
             await produto.save()
             res.status(201).json(produto)

@@ -16,6 +16,7 @@ function ProdutosForm() {
     }
 
     function cadastrarProduto(){
+        console.log(typeof(disponivel))
         axios.post('http://localhost:4000/products',{disponivel,nome,desc,price})
             .then(res=>console.log(res.data))
             .catch(erro=>console.log(erro))
