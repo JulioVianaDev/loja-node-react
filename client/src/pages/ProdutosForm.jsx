@@ -23,12 +23,16 @@ function ProdutosForm() {
                         type="checkbox" 
                         name="disponivel" 
                         id="disponivel" 
+                        checked={disponivel}
+                        onChange={handleCheckboxChange}
                     />
                     <label htmlFor="nDisponivel"> Produto Não Disponivel:</label>
                     <input 
                         type="checkbox" 
                         name="nDisponivel" 
                         id="nDisponivel" 
+                        checked={!disponivel}
+                        onChange={handleCheckboxChange}
                     />
                 </form>
             </div>
