@@ -30,6 +30,14 @@ function Root() {
                 >
                     Logar na loja
                 </NavLink>
+                <NavLink
+                    to='/produtos'
+                    className={({isActive})=>
+                        isActive ? 'link-clicado' : ''
+                    }
+                >
+                    Lista de Produtos
+                </NavLink>
             </div>
             <div>
 
