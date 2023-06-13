@@ -12,11 +12,11 @@ function Produtos() {
         <h1> Produtos </h1>
         
         {
-            produtos.map(p=> <div>
-                                <h2>Tomate</h2>
-                                <p>Desc </p>
-                                <p>Price</p>
-                                <p>Disponivel</p>
+            produtos.map(p=> <div key={p._id}>
+                                <h2>{p.nome}</h2>
+                                <p>{p.desc} </p>
+                                <p>{p.price}</p>
+                                <p>{p.disponivel}</p>
                             </div>
             )
         }
