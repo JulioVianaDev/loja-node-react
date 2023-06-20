@@ -15,7 +15,7 @@ function Registrar() {
   const [showCard,setShowCard]=useState(false);
 
   function cadastrarUsuario(user){
-    axios.post('http://localhost:4000/auth/register/user',user)
+    axios.post('https://loja-turma-terca-super-geeks.onrender.com/auth/register/user',user)
       .then(res=>console.log(res.data))
       .catch(erro=> console.log(erro))
   }

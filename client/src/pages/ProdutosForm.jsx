@@ -17,7 +17,7 @@ function ProdutosForm() {
 
     function cadastrarProduto(){
         console.log(typeof(disponivel))
-        axios.post('http://localhost:4000/products',{disponivel,nome,desc,price})
+        axios.post('https://loja-turma-terca-super-geeks.onrender.com/products',{disponivel,nome,desc,price})
             .then(res=>console.log(res.data))
             .catch(erro=>console.log(erro))
     }

@@ -3,7 +3,7 @@ import axios from 'axios'
 function Produtos() {
     const [produtos,setProdutos] = useState([])
     useEffect(()=>{
-        axios.get('http://localhost:4000/products')
+        axios.get('https://loja-turma-terca-super-geeks.onrender.com/products')
             .then(res=>setProdutos(res.data))
             .catch(err=>console.log(err))
     },[])
